@@ -176,7 +176,7 @@ export default function ServicesSection({ onOpenContact }) {
             }}
           >
             {webServices.map((service, idx) => (
-              <SpotlightCard key={idx} className="panel-padding" style={{ display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+              <SpotlightCard key={idx} className="panel-padding scroll-stagger-item" style={{ display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
                 <div style={{ marginBottom: '16px', padding: '10px', borderRadius: '12px', background: 'var(--accent-primary-light)', display: 'inline-block', width: 'fit-content', transition: 'transform 0.3s ease' }}>
                   {service.icon}
                 </div>
@@ -215,7 +215,7 @@ export default function ServicesSection({ onOpenContact }) {
             }}
           >
             {cyberServices.map((service, idx) => (
-              <SpotlightCard key={idx} className="panel-padding" style={{ borderTop: '3px solid var(--accent-purple)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+              <SpotlightCard key={idx} className="panel-padding scroll-stagger-item" style={{ borderTop: '3px solid var(--accent-purple)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
                 <div style={{ marginBottom: '16px', padding: '10px', borderRadius: '12px', background: 'var(--accent-purple-light)', display: 'inline-block', width: 'fit-content', transition: 'transform 0.3s ease' }}>
                   {service.icon}
                 </div>
@@ -260,7 +260,7 @@ export default function ServicesSection({ onOpenContact }) {
             }}
           >
             {careerServices.map((service, idx) => (
-              <SpotlightCard key={idx} className="panel-padding" style={{ borderTop: '3px solid var(--accent-emerald)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+              <SpotlightCard key={idx} className="panel-padding scroll-stagger-item" style={{ borderTop: '3px solid var(--accent-emerald)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                   <div style={{ padding: '10px', borderRadius: '12px', background: 'var(--accent-emerald-light)', transition: 'transform 0.3s ease' }}>
                     {service.icon}

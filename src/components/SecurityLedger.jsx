@@ -82,19 +82,19 @@ export default function SecurityLedger({ onOpenContact }) {
             marginBottom: '36px',
           }}
         >
-          <SpotlightCard className="panel-padding" style={{ background: '#ffffff' }}>
+          <SpotlightCard className="panel-padding scroll-stagger-item" style={{ background: '#ffffff' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
               <div style={{ padding: '9px', borderRadius: '10px', background: 'var(--accent-purple-light)', color: 'var(--accent-purple)', flexShrink: 0 }}>
                 <Lock size={20} />
               </div>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-main)' }}>Web Exploitation</h3>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-main)' }}>Web Penetration</h3>
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: 1.5 }}>
-              Forcing authentication bypass, breaking deep business logic flows, and testing OWASP Top 10 vulnerabilities.
+              Manual ethical testing of business logic, access controls, SQL injections, and XSS mapped to OWASP.
             </p>
           </SpotlightCard>
 
-          <SpotlightCard className="panel-padding" style={{ background: '#ffffff' }}>
+          <SpotlightCard className="panel-padding scroll-stagger-item" style={{ background: '#ffffff' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
               <div style={{ padding: '9px', borderRadius: '10px', background: 'var(--accent-cyan-light)', color: 'var(--accent-cyan)', flexShrink: 0 }}>
                 <ShieldAlert size={20} />
@@ -106,7 +106,7 @@ export default function SecurityLedger({ onOpenContact }) {
             </p>
           </SpotlightCard>
 
-          <SpotlightCard className="panel-padding" style={{ background: '#ffffff' }}>
+          <SpotlightCard className="panel-padding scroll-stagger-item" style={{ background: '#ffffff' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
               <div style={{ padding: '9px', borderRadius: '10px', background: 'var(--accent-emerald-light)', color: 'var(--accent-emerald)', flexShrink: 0 }}>
                 <FileCode size={20} />
@@ -120,7 +120,7 @@ export default function SecurityLedger({ onOpenContact }) {
         </div>
 
         {/* Interactive Vulnerability Ledger Table */}
-        <div className="glass-panel panel-padding" style={{ background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
+        <div className="glass-panel panel-padding scroll-stagger-item" style={{ background: '#ffffff', border: '1px solid var(--border-subtle)' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', gap: '12px' }}>
             <div>
               <h3 style={{ fontSize: '1.08rem', fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px' }}>

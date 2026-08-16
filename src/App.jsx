@@ -14,27 +14,96 @@ export default function App() {
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
 
-  // Synchronize with URL hash for browser back/forward and direct links
+  // ScrollSpy & Scroll-Reveal IntersectionObserver
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      const validTabs = ['home', 'services', 'cybersecurity', 'career-hub', 'trust', 'portfolio', 'contact'];
-      if (hash && validTabs.includes(hash)) {
-        setActiveTab(hash);
-      } else if (!hash) {
-        setActiveTab('home');
-      }
-    };
+    const sectionIds = ['home', 'services', 'cybersecurity', 'career-hub', 'trust', 'portfolio', 'contact'];
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    // 1. Ensure top home section is visible immediately
+    const homeEl = document.getElementById('home');
+    if (homeEl) homeEl.classList.add('is-visible');
+
+    // 2. ScrollSpy Observer to update Navbar active tab on scroll
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            setActiveTab(id);
+            if (window.history.replaceState) {
+              window.history.replaceState(null, null, `#${id}`);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -55% 0px',
+        threshold: 0.05,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) spyObserver.observe(el);
+    });
+
+    // 3. Section-to-Section Scroll Transition Observer
+    const sectionElements = document.querySelectorAll('.section-slide-animate, .card-slide-animate');
+    
+    // Check initial viewport position
+    sectionElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top > window.innerHeight * 0.85) {
+        el.classList.add('will-animate');
+      } else {
+        el.classList.add('is-in-view');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('will-animate');
+            entry.target.classList.add('is-in-view');
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    sectionElements.forEach((el) => revealObserver.observe(el));
+
+    // Scroll listener fallback for instantaneous responsive reveal
+    const handleScrollFallback = () => {
+      sectionElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 20) {
+          el.classList.remove('will-animate');
+          el.classList.add('is-in-view');
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScrollFallback, { passive: true });
+
+    return () => {
+      spyObserver.disconnect();
+      revealObserver.disconnect();
+      window.removeEventListener('scroll', handleScrollFallback);
+    };
   }, []);
 
+  // Smooth Scroll to Section when Tab is clicked
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
-    window.location.hash = tabId;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const element = document.getElementById(tabId);
+    if (element) {
+      const yOffset = -70; // offset for fixed top navbar
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   const handleOpenContact = (serviceName = '') => {
@@ -49,54 +118,51 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Navigation Bar with Active Tab Indicators */}
+      {/* Fixed Navigation Bar with Active Tab Indicators */}
       <Navbar
         activeTab={activeTab}
         onSelectTab={handleTabChange}
         onOpenContact={handleOpenContact}
       />
 
-      {/* Main Tab Content View: Renders ONLY the selected tab */}
-      <main style={{ flexGrow: 1, minHeight: '65vh' }}>
-        {activeTab === 'home' && (
+      {/* Main Single-Page View: All sections flow naturally on one screen with scroll animations */}
+      <main style={{ flexGrow: 1 }}>
+        
+        {/* Section 01: Home / Hero */}
+        <section id="home" className="section-slide-animate is-in-view">
           <Hero onNavigate={handleTabChange} onOpenContact={handleOpenContact} />
-        )}
+        </section>
 
-        {activeTab === 'services' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <ServicesSection onOpenContact={handleOpenContact} />
-          </div>
-        )}
+        {/* Section 02: Digital Engineering & Services */}
+        <section id="services" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <ServicesSection onOpenContact={handleOpenContact} />
+        </section>
 
-        {activeTab === 'cybersecurity' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <SecurityLedger onOpenContact={handleOpenContact} />
-          </div>
-        )}
+        {/* Section 03: Offensive Cybersecurity & VAPT */}
+        <section id="cybersecurity" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <SecurityLedger onOpenContact={handleOpenContact} />
+        </section>
 
-        {activeTab === 'career-hub' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <CareerPackageBuilder onOpenContact={handleOpenContact} />
-          </div>
-        )}
+        {/* Section 04: Career Hub & ATS Package Builder */}
+        <section id="career-hub" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <CareerPackageBuilder onOpenContact={handleOpenContact} />
+        </section>
 
-        {activeTab === 'trust' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <TrustSection onOpenContact={handleOpenContact} />
-          </div>
-        )}
+        {/* Section 05: Trust, Governance & MSME Compliance */}
+        <section id="trust" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <TrustSection onOpenContact={handleOpenContact} />
+        </section>
 
-        {activeTab === 'portfolio' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <PortfolioSection onOpenContact={handleOpenContact} />
-          </div>
-        )}
+        {/* Section 06: Selected Deliveries & Portfolio */}
+        <section id="portfolio" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <PortfolioSection onOpenContact={handleOpenContact} />
+        </section>
 
-        {activeTab === 'contact' && (
-          <div style={{ paddingTop: 'clamp(65px, 8vw, 85px)' }}>
-            <ContactSection isOpen={false} initialService={selectedService} onClose={handleCloseContact} />
-          </div>
-        )}
+        {/* Section 07: Direct Consultation & Contact Channels */}
+        <section id="contact" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
+          <ContactSection isOpen={false} initialService={selectedService} onClose={handleCloseContact} />
+        </section>
+
       </main>
 
       {/* Modal Popup Contact Overlay */}
@@ -108,7 +174,7 @@ export default function App() {
         />
       )}
 
-      {/* Footer with Tab Switcher Links */}
+      {/* Footer with Smooth Section Scroll Links */}
       <Footer onSelectTab={handleTabChange} />
     </div>
   );

@@ -102,7 +102,19 @@ export default function Navbar({ activeTab = 'home', onSelectTab, onOpenContact 
         </div>
 
         {/* Desktop Navigation Tabs */}
-        <nav style={{ display: 'none', alignItems: 'center', gap: '4px', background: '#f1f5f9', padding: '4px 6px', borderRadius: '9999px', border: '1px solid var(--border-subtle)' }} className="desktop-links" aria-label="Main Navigation">
+        <nav
+          style={{
+            display: 'none',
+            alignItems: 'center',
+            gap: '3px',
+            background: '#f1f5f9',
+            padding: '4px 6px',
+            borderRadius: '9999px',
+            border: '1px solid #e2e8f0',
+          }}
+          className="desktop-links"
+          aria-label="Main Navigation"
+        >
           {navLinks.map((link) => {
             const isActive = activeTab === link.id;
             return (
@@ -111,18 +123,34 @@ export default function Navbar({ activeTab = 'home', onSelectTab, onOpenContact 
                 onClick={() => handleNavClick(link.id)}
                 style={{
                   fontSize: '0.78rem',
-                  fontWeight: 600,
-                  padding: '5px 12px',
+                  fontWeight: isActive ? 700 : 600,
+                  padding: '6px 13px',
                   borderRadius: '9999px',
                   color: isActive ? '#ffffff' : 'var(--text-body)',
-                  background: isActive ? '#0f172a' : 'transparent',
-                  boxShadow: isActive ? '0 2px 8px rgba(15, 23, 42, 0.15)' : 'none',
+                  background: isActive
+                    ? 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+                    : 'transparent',
+                  boxShadow: isActive
+                    ? '0 3px 12px rgba(37, 99, 235, 0.32)'
+                    : 'none',
                   transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '5px',
                   border: 'none',
                   cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background = 'rgba(226, 232, 240, 0.7)';
+                    e.currentTarget.style.color = 'var(--text-main)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = 'var(--text-body)';
+                  }
                 }}
               >
                 {link.name}
@@ -200,9 +228,9 @@ export default function Navbar({ activeTab = 'home', onSelectTab, onOpenContact 
                 style={{
                   fontSize: '0.86rem',
                   fontWeight: 600,
-                  color: isActive ? '#ffffff' : 'var(--text-main)',
-                  background: isActive ? '#0f172a' : '#f8fafc',
-                  border: isActive ? '1px solid #0f172a' : '1px solid var(--border-subtle)',
+                  color: isActive ? '#1d4ed8' : 'var(--text-main)',
+                  background: isActive ? 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)' : '#f8fafc',
+                  border: isActive ? '1px solid #93c5fd' : '1px solid var(--border-subtle)',
                   borderRadius: '8px',
                   padding: '11px 14px',
                   display: 'flex',
@@ -217,7 +245,20 @@ export default function Navbar({ activeTab = 'home', onSelectTab, onOpenContact 
                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   {link.icon} {link.name}
                 </span>
-                {isActive && <span style={{ fontSize: '0.7rem', background: '#38bdf8', color: '#0f172a', padding: '2px 8px', borderRadius: '9999px', fontWeight: 700 }}>Active</span>}
+                {isActive && (
+                  <span
+                    style={{
+                      fontSize: '0.7rem',
+                      background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+                      color: '#ffffff',
+                      padding: '2px 8px',
+                      borderRadius: '9999px',
+                      fontWeight: 700,
+                    }}
+                  >
+                    Active
+                  </span>
+                )}
               </button>
             );
           })}
