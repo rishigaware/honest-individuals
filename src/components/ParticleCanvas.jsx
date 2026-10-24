@@ -52,7 +52,7 @@ export default function ParticleCanvas() {
         this.baseY = this.y;
         this.vx = (Math.random() - 0.5) * 0.7;
         this.vy = (Math.random() - 0.5) * 0.7;
-        this.color = Math.random() > 0.4 ? 'rgba(37, 99, 235, 0.45)' : 'rgba(124, 58, 237, 0.45)';
+        this.color = Math.random() > 0.4 ? 'rgba(235, 22, 35, 0.45)' : 'rgba(255, 60, 75, 0.4)';
       }
 
       draw() {
@@ -105,7 +105,7 @@ export default function ParticleCanvas() {
 
           if (dist < maxDistance) {
             const opacity = 1 - dist / maxDistance;
-            ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.18})`;
+            ctx.strokeStyle = `rgba(235, 22, 35, ${opacity * 0.18})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);

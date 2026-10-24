@@ -32,9 +32,9 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
     width: '100%',
     padding: '11px 14px',
     borderRadius: '8px',
-    background: '#ffffff',
-    border: '1px solid var(--border-medium)',
-    color: 'var(--text-main)',
+    background: '#141822',
+    border: '1px solid rgba(255, 255, 255, 0.12)',
+    color: '#ffffff',
     fontSize: '16px', /* 16px prevents iOS Safari auto-zoom on input focus */
     outline: 'none',
     transition: 'border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease',
@@ -44,25 +44,25 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
     display: 'block',
     fontSize: '0.82rem',
     fontWeight: 600,
-    color: 'var(--text-main)',
+    color: '#cbd5e1',
     marginBottom: '5px',
   };
 
   return (
     <>
       {/* Embedded Contact Section on Main Page / Dedicated Tab */}
-      <section id="contact" className="section-padding" style={{ position: 'relative', background: '#f8fafc', borderTop: '1px solid var(--border-subtle)' }}>
+      <section id="contact" className="section-padding" style={{ position: 'relative', background: '#090b0e', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div className="container">
           
           {/* Header */}
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto clamp(20px, 3.5vw, 32px) auto' }}>
-            <span className="badge badge-cyan" style={{ marginBottom: '10px' }}>
+            <span className="badge badge-rose" style={{ marginBottom: '10px' }}>
               <MessageSquareQuote size={12} /> Direct Contact & Consultation
             </span>
-            <h2 style={{ fontSize: 'clamp(1.18rem, 1.8vw, 1.45rem)', fontWeight: 800, marginBottom: '8px' }}>
-              Let's Build Something <span className="gradient-text-cyan">Exceptional Together</span>
+            <h2 style={{ fontSize: 'clamp(1.18rem, 1.8vw, 1.45rem)', fontWeight: 800, marginBottom: '8px', color: '#ffffff' }}>
+              Let's Build Something <span style={{ color: '#eb1623', textShadow: '0 0 25px rgba(235, 22, 35, 0.4)' }}>Exceptional Together</span>
             </h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', lineHeight: 1.6 }}>
+            <p style={{ color: '#94a3b8', fontSize: '0.86rem', lineHeight: 1.6 }}>
               Reach out for web development quotes, offensive penetration testing authorization, or career counseling mentorship.
             </p>
           </div>
@@ -77,42 +77,42 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
               margin: '0 auto 24px auto',
             }}
           >
-            <SpotlightCard className="panel-padding" style={{ background: '#ffffff', textAlign: 'center', padding: '14px 12px' }}>
-              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'var(--accent-primary-light)', color: 'var(--accent-primary)', marginBottom: '6px' }}>
+            <SpotlightCard className="panel-padding" style={{ background: '#141822', textAlign: 'center', padding: '14px 12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'rgba(235, 22, 35, 0.12)', color: '#eb1623', marginBottom: '6px' }}>
                 <Phone size={16} />
               </div>
-              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)' }}>Direct WhatsApp / Call</div>
-              <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '2px' }}>Instant Project Scoping</div>
+              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: '#ffffff' }}>Direct WhatsApp / Call</div>
+              <div style={{ fontSize: '0.74rem', color: '#94a3b8', marginTop: '2px' }}>Instant Project Scoping</div>
             </SpotlightCard>
 
-            <SpotlightCard className="panel-padding" style={{ background: '#ffffff', textAlign: 'center', padding: '14px 12px' }}>
-              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'var(--accent-purple-light)', color: 'var(--accent-purple)', marginBottom: '6px' }}>
+            <SpotlightCard className="panel-padding" style={{ background: '#141822', textAlign: 'center', padding: '14px 12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'rgba(235, 22, 35, 0.12)', color: '#ff2a38', marginBottom: '6px' }}>
                 <Mail size={16} />
               </div>
-              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)' }}>Official RFPs & NDAs</div>
-              <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '2px' }}>Formal Scope Documents</div>
+              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: '#ffffff' }}>Official RFPs & NDAs</div>
+              <div style={{ fontSize: '0.74rem', color: '#94a3b8', marginTop: '2px' }}>Formal Scope Documents</div>
             </SpotlightCard>
 
-            <SpotlightCard className="panel-padding" style={{ background: '#ffffff', textAlign: 'center', padding: '14px 12px' }}>
-              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'var(--accent-emerald-light)', color: 'var(--accent-emerald)', marginBottom: '6px' }}>
+            <SpotlightCard className="panel-padding" style={{ background: '#141822', textAlign: 'center', padding: '14px 12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <div style={{ display: 'inline-flex', padding: '8px', borderRadius: '50%', background: 'rgba(235, 22, 35, 0.12)', color: '#eb1623', marginBottom: '6px' }}>
                 <Clock size={16} />
               </div>
-              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)' }}>24-Hour SLA</div>
-              <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '2px' }}>Direct MD Review & Response</div>
+              <div style={{ fontSize: '0.84rem', fontWeight: 700, color: '#ffffff' }}>24-Hour SLA</div>
+              <div style={{ fontSize: '0.74rem', color: '#94a3b8', marginTop: '2px' }}>Direct MD Review & Response</div>
             </SpotlightCard>
           </div>
 
           {/* Form Card */}
-          <SpotlightCard className="panel-padding" style={{ maxWidth: '780px', margin: '0 auto', background: '#ffffff' }}>
+          <SpotlightCard className="panel-padding" style={{ maxWidth: '780px', margin: '0 auto', background: '#141822', border: '1px solid rgba(255, 255, 255, 0.1)', boxShadow: '0 8px 30px rgba(0,0,0,0.6)' }}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: 'clamp(20px, 4vw, 36px) 10px' }}>
-                <div style={{ padding: '10px', borderRadius: '50%', background: 'var(--accent-emerald-light)', color: 'var(--accent-emerald)', display: 'inline-block', marginBottom: '12px' }}>
+                <div style={{ padding: '10px', borderRadius: '50%', background: 'rgba(235, 22, 35, 0.12)', color: '#eb1623', display: 'inline-block', marginBottom: '12px' }}>
                   <CheckCircle2 size={32} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '6px' }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#ffffff', marginBottom: '6px' }}>
                   Inquiry Received!
                 </h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.86rem', maxWidth: '500px', margin: '0 auto 16px auto', lineHeight: 1.55 }}>
+                <p style={{ color: '#94a3b8', fontSize: '0.86rem', maxWidth: '500px', margin: '0 auto 16px auto', lineHeight: 1.55 }}>
                   Thank you, <strong>{formData.name}</strong>. The Honest Individuals team under project MD Mr. Devesh Dhoble will review your requirements and reach out within 24 hours.
                 </p>
                 <button onClick={() => setSubmitted(false)} className="btn-secondary">
@@ -134,32 +134,32 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.target.style.borderColor = 'var(--accent-primary)';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.12)';
+                        e.target.style.borderColor = '#eb1623';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'var(--border-medium)';
+                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
                         e.target.style.boxShadow = 'none';
                       }}
                     />
                   </div>
                   <div>
                     <label style={labelStyle}>
-                      WhatsApp Number / Email *
+                      Contact Info (Phone / Email) *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. +91 9876543210 or email@domain.com"
+                      placeholder="+91 9876543210 or email"
                       value={formData.contact}
                       onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.target.style.borderColor = 'var(--accent-primary)';
-                        e.target.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.12)';
+                        e.target.style.borderColor = '#eb1623';
+                        e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = 'var(--border-medium)';
+                        e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
                         e.target.style.boxShadow = 'none';
                       }}
                     />
@@ -168,51 +168,37 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
 
                 <div>
                   <label style={labelStyle}>
-                    Primary Vertical / Service Interest
+                    Project / Inquiry Type
                   </label>
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    style={{
-                      ...inputStyle,
-                      cursor: 'pointer',
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = 'var(--accent-primary)';
-                      e.target.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.12)';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = 'var(--border-medium)';
-                      e.target.style.boxShadow = 'none';
-                    }}
+                    style={{ ...inputStyle, cursor: 'pointer' }}
                   >
-                    <option value="Web Development">Web & Mobile Application Development</option>
-                    <option value="Cybersecurity Audit">Offensive Cybersecurity / PenTest Audit</option>
-                    <option value="Career Counseling">Career Counseling & ATS Resume Package</option>
-                    <option value="Premium Career Success Package (₹9,999)">Premium Career Success Package (₹9,999)</option>
-                    <option value="Enterprise Solution">Custom Enterprise Contract</option>
+                    <option value="Web Development" style={{ background: '#141822', color: '#fff' }}>Web & App Development</option>
+                    <option value="Offensive Cybersecurity" style={{ background: '#141822', color: '#fff' }}>Offensive Cybersecurity & VAPT</option>
+                    <option value="Career Counseling" style={{ background: '#141822', color: '#fff' }}>Career Counseling & ATS Resume</option>
+                    <option value="Contractor Partnership" style={{ background: '#141822', color: '#fff' }}>Prime Contractor Partnership</option>
+                    <option value="General Consultation" style={{ background: '#141822', color: '#fff' }}>General Consultation</option>
                   </select>
                 </div>
 
                 <div>
                   <label style={labelStyle}>
-                    Project Details / Requirements
+                    Requirements / Project Description
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Describe your project, desired features, scope, or target timeline..."
+                    placeholder="Briefly describe your project requirements, scope, or timeline..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    style={{
-                      ...inputStyle,
-                      resize: 'vertical',
-                    }}
+                    style={{ ...inputStyle, resize: 'vertical' }}
                     onFocus={(e) => {
-                      e.target.style.borderColor = 'var(--accent-primary)';
-                      e.target.style.boxShadow = '0 0 0 3px rgba(37, 99, 235, 0.12)';
+                      e.target.style.borderColor = '#eb1623';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
                     }}
                     onBlur={(e) => {
-                      e.target.style.borderColor = 'var(--border-medium)';
+                      e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
                       e.target.style.boxShadow = 'none';
                     }}
                   />
@@ -221,9 +207,15 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                 <button
                   type="submit"
                   className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', padding: '11px', fontSize: '0.88rem', marginTop: '2px' }}
+                  style={{
+                    width: '100%',
+                    justifyContent: 'center',
+                    padding: '12px',
+                    fontSize: '0.92rem',
+                    marginTop: '6px',
+                  }}
                 >
-                  Submit Inquiry <Send size={15} />
+                  Submit Inquiry to Project MD <Send size={15} />
                 </button>
               </form>
             )}
@@ -238,13 +230,13 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
             position: 'fixed',
             inset: 0,
             zIndex: 200,
-            background: 'rgba(15, 23, 42, 0.65)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
+            background: 'rgba(5, 7, 10, 0.82)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 'clamp(10px, 3vw, 20px)',
+            padding: 'clamp(12px, 3vw, 24px)',
           }}
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
@@ -258,8 +250,9 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
               maxHeight: '92vh',
               overflowY: 'auto',
               position: 'relative',
-              background: '#ffffff',
-              boxShadow: 'var(--shadow-xl)',
+              background: '#11141b',
+              border: '1px solid rgba(235, 22, 35, 0.28)',
+              boxShadow: '0 24px 48px rgba(0, 0, 0, 0.85), 0 0 35px rgba(235, 22, 35, 0.15)',
             }}
           >
             <button
@@ -268,35 +261,43 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                 position: 'absolute',
                 top: '14px',
                 right: '14px',
-                color: 'var(--text-muted)',
+                color: '#cbd5e1',
                 width: '36px',
                 height: '36px',
                 borderRadius: '8px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: '#f1f5f9',
-                border: 'none',
+                background: '#161b24',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
                 cursor: 'pointer',
-                transition: 'background 0.2s ease',
+                transition: 'background 0.2s ease, border-color 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#eb1623';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = '#161b24';
+                e.currentTarget.style.color = '#cbd5e1';
               }}
               aria-label="Close modal"
             >
               <X size={18} />
             </button>
 
-            <h3 style={{ fontSize: '1.12rem', fontWeight: 800, color: 'var(--text-main)', marginBottom: '4px', paddingRight: '36px' }}>
+            <h3 style={{ fontSize: '1.16rem', fontWeight: 800, color: '#ffffff', marginBottom: '4px', paddingRight: '36px' }}>
               Request Proposal / Inquiry
             </h3>
-            <p style={{ fontSize: '0.82rem', color: 'var(--accent-primary)', marginBottom: '16px', fontWeight: 600 }}>
+            <p style={{ fontSize: '0.84rem', color: '#ff2a38', marginBottom: '16px', fontWeight: 600 }}>
               Selected Focus: {initialService || 'General Consultation'}
             </p>
 
             {submitted ? (
-              <div style={{ textAlign: 'center', padding: '20px 0' }}>
-                <CheckCircle2 size={36} color="var(--accent-emerald)" style={{ margin: '0 auto 10px auto' }} />
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)' }}>Inquiry Submitted!</h4>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.84rem', marginTop: '4px', marginBottom: '16px' }}>
+              <div style={{ textAlign: 'center', padding: '24px 0' }}>
+                <CheckCircle2 size={38} color="#ff2a38" style={{ margin: '0 auto 12px auto' }} />
+                <h4 style={{ fontSize: '1.12rem', fontWeight: 700, color: '#ffffff' }}>Inquiry Submitted!</h4>
+                <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '6px', marginBottom: '18px' }}>
                   Our MD and project leads will connect with you shortly.
                 </p>
                 <button onClick={handleReset} className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
@@ -304,7 +305,7 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '12px' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '14px' }}>
                 <div>
                   <label style={labelStyle}>
                     Full Name *
@@ -316,6 +317,14 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     style={inputStyle}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#eb1623';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
@@ -330,6 +339,14 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                     value={formData.contact}
                     onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
                     style={inputStyle}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#eb1623';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
@@ -343,19 +360,27 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     style={{ ...inputStyle, resize: 'vertical' }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#eb1623';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(235, 22, 35, 0.25)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                  <ShieldCheck size={14} color="var(--accent-emerald)" /> All inquiries protected under formal NDA protocols
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.74rem', color: '#94a3b8' }}>
+                  <ShieldCheck size={15} color="#ff2a38" /> All inquiries protected under formal NDA protocols
                 </div>
 
                 <button
                   type="submit"
                   className="btn-primary"
-                  style={{ width: '100%', justifyContent: 'center', padding: '10px', fontSize: '0.86rem', marginTop: '4px' }}
+                  style={{ width: '100%', justifyContent: 'center', padding: '12px', fontSize: '0.9rem', marginTop: '4px' }}
                 >
-                  Send Inquiry <Send size={14} />
+                  Send Inquiry <Send size={15} />
                 </button>
               </form>
             )}
