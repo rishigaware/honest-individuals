@@ -12,7 +12,7 @@ export default function Footer({ onSelectTab }) {
   return (
     <footer style={{ background: '#07090d', borderTop: '1px solid rgba(235, 22, 35, 0.2)', padding: 'clamp(36px, 6vw, 55px) 0 24px 0', color: '#ffffff' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '32px', marginBottom: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '28px', marginBottom: '32px' }}>
           
           {/* Col 1: Brand */}
           <div>

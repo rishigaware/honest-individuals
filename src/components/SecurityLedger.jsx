@@ -292,7 +292,7 @@ export default function SecurityLedger({ onOpenContact }) {
           </div>
 
           {/* Interactive Slide 1 & 3 Previews */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '12px' }}>
             <div
               onClick={() => openCyberSlide(0)}
               style={{
@@ -372,7 +372,7 @@ export default function SecurityLedger({ onOpenContact }) {
             }}
           >
             {/* Left Column: Vulnerability Selector List */}
-            <div style={{ borderRight: '1px solid rgba(255, 255, 255, 0.08)', padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="terminal-list-col" style={{ borderRight: '1px solid rgba(255, 255, 255, 0.08)', padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ fontSize: '0.72rem', color: '#64748b', textTransform: 'uppercase', fontWeight: 700, marginBottom: '4px', letterSpacing: '0.04em' }}>
                 Deducted Security Findings ({vulnerabilities.length})
               </div>

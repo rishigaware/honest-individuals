@@ -347,7 +347,7 @@ export default function PortfolioSection({ onOpenContact }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '24px',
               padding: 'clamp(16px, 3vw, 28px)',
               alignItems: 'center',
@@ -600,7 +600,7 @@ export default function PortfolioSection({ onOpenContact }) {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))',
               gap: '18px',
             }}
           >

@@ -73,10 +73,10 @@ export default function Hero({ onNavigate, onOpenContact }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 480px), 1fr))',
-            gap: 'clamp(28px, 5vw, 48px)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+            gap: 'clamp(24px, 4vw, 44px)',
             alignItems: 'center',
-            marginBottom: 'clamp(36px, 6vw, 56px)',
+            marginBottom: 'clamp(32px, 5vw, 52px)',
           }}
         >
           {/* LEFT COLUMN: HERO INFORMATION & ACTIONS */}
@@ -313,8 +313,8 @@ export default function Hero({ onNavigate, onOpenContact }) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
-            gap: '14px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+            gap: '12px',
           }}
         >
           {[

@@ -172,7 +172,7 @@ export default function Navbar({ activeTab = 'home', onSelectTab, onOpenContact 
             }}
           >
             <PhoneCall size={14} />
-            <span style={{ display: 'inline' }}>Consultation</span>
+            <span className="nav-btn-text">Consultation</span>
           </button>
 
           {/* Mobile Menu Toggle Button */}

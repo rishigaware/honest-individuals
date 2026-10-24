@@ -443,6 +443,8 @@ img, svg {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
   width: 100%;
 }
 
@@ -710,6 +712,8 @@ img, svg {
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 
   .section-padding {
@@ -786,20 +790,42 @@ img, svg {
   .banner-features-grid {
     grid-template-columns: 1fr !important;
   }
+
+  .terminal-list-col {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .satellite-tag {
+    display: none !important;
+  }
+
+  .architecture-container {
+    overflow: hidden !important;
+    padding: 16px 8px !important;
+  }
+
+  .nav-btn-text {
+    display: none !important;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 14px;
+    padding: 0 12px;
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
   }
 
   .section-padding {
-    padding: 45px 0;
+    padding: 42px 0;
   }
 
   .btn-primary, .btn-secondary {
-    padding: 10px 18px;
-    font-size: 0.9rem;
+    padding: 10px 16px;
+    font-size: 0.86rem;
   }
 
   .builder-service-item {
@@ -815,12 +841,14 @@ img, svg {
 
 @media (max-width: 360px) {
   .container {
-    padding: 0 10px;
+    padding: 0 8px;
+    padding-left: max(8px, env(safe-area-inset-left));
+    padding-right: max(8px, env(safe-area-inset-right));
   }
   
   .badge {
-    font-size: 0.72rem;
-    padding: 4px 8px;
+    font-size: 0.7rem;
+    padding: 3px 7px;
   }
 }
 

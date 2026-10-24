@@ -472,7 +472,7 @@ export default function TrustSection({ onOpenContact }) {
             padding: 'clamp(20px, 4vw, 32px)',
             color: '#ffffff',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '24px',
             alignItems: 'center',
           }}
@@ -513,7 +513,7 @@ export default function TrustSection({ onOpenContact }) {
           </div>
 
           {/* Thumbnail preview of Organization Deck Slide 6 & 7 */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '12px' }}>
             <div
               onClick={() => openDocumentLightbox(PORTFOLIO_SLIDES, 5)}
               style={{

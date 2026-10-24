@@ -220,7 +220,7 @@ export default function ServicesSection({ onOpenContact }) {
             padding: 'clamp(16px, 3vw, 28px)',
             marginBottom: '32px',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 380px), 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: '24px',
             alignItems: 'center',
             color: '#ffffff',
