@@ -117,7 +117,8 @@ export default function Hero({ onNavigate, onOpenContact }) {
                 color: '#ffffff',
               }}
             >
-              HONEST <span style={{ color: '#eb1623', textShadow: '0 0 35px rgba(235, 22, 35, 0.45)' }}>INDIVIDUALS</span>
+              <span className="brand-text-honest">HONEST</span>{' '}
+              <span className="brand-text-individuals" style={{ color: '#eb1623' }}>INDIVIDUALS</span>
               <span style={{ display: 'block', fontSize: '0.45em', fontWeight: 600, color: '#94a3b8', letterSpacing: '0.05em', textTransform: 'uppercase', marginTop: '6px' }}>
                 Group • Trusted Services in Bharat
               </span>

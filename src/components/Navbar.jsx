@@ -111,69 +111,35 @@ export default function Navbar({
         }}
       >
         {/* Brand Logo & Name */}
+        {/* Brand Logo & Name with Rich Dynamic Animations */}
         <div
+          id="navbar-brand-logo"
+          className="brand-logo-group"
           onClick={() => handleNavClick("home")}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "clamp(8px, 2vw, 12px)",
-            cursor: "pointer",
-            minWidth: 0,
-            flexShrink: 1,
-          }}
+          aria-label="Honest Individuals Home"
         >
-          <img
-            src={BRAND_LOGO}
-            alt={BRAND_ALT}
-            style={{
-              height: "clamp(44px, 5.5vw, 56px)",
-              width: "auto",
-              objectFit: "contain",
-              flexShrink: 0,
-              transition: "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "scale(1.05)")
-            }
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          />
+          {/* Animated Logo Emblem with Neon Halo Aura */}
+          <div className="brand-emblem-wrapper">
+            <div className="brand-emblem-halo" aria-hidden="true" />
+            <img
+              src={BRAND_LOGO}
+              alt={BRAND_ALT}
+              className="brand-logo-img"
+            />
+          </div>
+
+          {/* Animated Brand Wordmark & Live Statutory Status */}
           <div style={{ minWidth: 0, overflow: "hidden" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 800,
-                fontSize: "clamp(0.85rem, 2.4vw, 1.05rem)",
-                letterSpacing: "-0.01em",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                gap: "5px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span>HONEST</span>
-              <span
-                style={{
-                  color: "#eb1623",
-                  textShadow: "0 0 20px rgba(235, 22, 35, 0.4)",
-                }}
-              >
-                INDIVIDUALS
-              </span>
+            <div className="brand-wordmark-title">
+              <span className="brand-text-honest">HONEST</span>
+              <span className="brand-text-individuals">INDIVIDUALS</span>
             </div>
-            <div
-              style={{
-                fontSize: "0.62rem",
-                color: "#94a3b8",
-                letterSpacing: "0.04em",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              UDYAM-MP-13-0068161 • BHARAT
+            <div className="brand-subtitle-badge">
+              <span className="brand-radar-wrapper" title="Statutory Verified Under Ministry of MSME, Govt of India">
+                <span className="brand-radar-wave" />
+                <span className="brand-radar-core" />
+              </span>
+              <span>UDYAM-MP-13-0068161 • BHARAT</span>
             </div>
           </div>
         </div>

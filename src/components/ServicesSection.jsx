@@ -365,12 +365,11 @@ export default function ServicesSection({ onOpenContact }) {
             webSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding card-slide-animate"
+                className="panel-padding"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  background: 'var(--bg-surface)',
                   borderTop: '3px solid #eb1623',
                 }}
               >
@@ -428,12 +427,11 @@ export default function ServicesSection({ onOpenContact }) {
             cyberSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding card-slide-animate"
+                className="panel-padding"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  background: 'var(--bg-surface)',
                   borderTop: '3px solid #ff2a38',
                 }}
               >
@@ -491,12 +489,11 @@ export default function ServicesSection({ onOpenContact }) {
             careerSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding card-slide-animate"
+                className="panel-padding"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  background: 'var(--bg-surface)',
                   borderTop: '3px solid #eb1623',
                 }}
               >

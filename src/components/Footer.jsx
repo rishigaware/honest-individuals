@@ -17,20 +17,22 @@ export default function Footer({ onSelectTab }) {
           {/* Col 1: Brand */}
           <div>
             <div
+              className="brand-logo-group"
               onClick={() => handleNav('home')}
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px', cursor: 'pointer' }}
+              style={{ marginBottom: '12px', padding: 0 }}
             >
-              <img
-                src={BRAND_LOGO}
-                alt={BRAND_ALT}
-                style={{
-                  height: 'clamp(40px, 5vw, 48px)',
-                  width: 'auto',
-                  objectFit: 'contain',
-                }}
-              />
+              <div className="brand-emblem-wrapper">
+                <div className="brand-emblem-halo" aria-hidden="true" />
+                <img
+                  src={BRAND_LOGO}
+                  alt={BRAND_ALT}
+                  className="brand-logo-img"
+                  style={{ height: 'clamp(40px, 5vw, 48px)' }}
+                />
+              </div>
               <span style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.05rem', color: '#ffffff', letterSpacing: '-0.01em' }}>
-                HONEST <span style={{ color: '#eb1623', textShadow: '0 0 20px rgba(235, 22, 35, 0.4)' }}>INDIVIDUALS</span>
+                <span className="brand-text-honest">HONEST</span>{' '}
+                <span className="brand-text-individuals">INDIVIDUALS</span>
               </span>
             </div>
             <p style={{ color: '#94a3b8', fontSize: '0.82rem', lineHeight: 1.6, marginBottom: '14px' }}>

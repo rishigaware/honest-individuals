@@ -182,27 +182,32 @@ img, svg {
 
 /* Glass & Card Panels */
 .glass-panel {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(20, 24, 34, 0.88) 0%, rgba(12, 14, 20, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   position: relative;
 }
 
 .glass-panel:hover {
-  box-shadow: var(--shadow-xl), 0 0 25px rgba(235, 22, 35, 0.15);
-  border-color: rgba(235, 22, 35, 0.35);
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.8), 0 0 30px rgba(235, 22, 35, 0.2);
+  border-color: rgba(235, 22, 35, 0.45);
 }
 
 /* Interactive Spotlight Card with 3D Depth */
 .spotlight-card {
   position: relative;
   overflow: hidden;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  background: linear-gradient(145deg, rgba(20, 24, 34, 0.92) 0%, rgba(12, 14, 20, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px -6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   transform-style: preserve-3d;
   will-change: transform;
 }
@@ -215,7 +220,7 @@ img, svg {
   width: 380px;
   height: 380px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(235, 22, 35, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(235, 22, 35, 0.16) 0%, transparent 65%);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -228,9 +233,9 @@ img, svg {
 }
 
 .spotlight-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.7), 0 0 25px rgba(235, 22, 35, 0.18);
-  border-color: rgba(235, 22, 35, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -8px rgba(0, 0, 0, 0.8), 0 0 32px rgba(235, 22, 35, 0.25);
+  border-color: rgba(235, 22, 35, 0.45);
 }
 
 /* Adaptive Panel Padding */
@@ -1020,56 +1025,40 @@ img, svg {
   }
 }
 
-/* Native CSS Scroll-Driven Animations (Chrome, Edge, Safari 18+) */
-@supports (animation-timeline: view()) {
-  .section-slide-animate {
-    animation: webflowSectionIn cubic-bezier(0.19, 1, 0.22, 1) both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 32%;
-  }
+/* ═══════════════════════════════════════════════════════════════════════════
+   Section Architecture & Fluid Layout
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-  .card-slide-animate {
-    animation: webflowCardStagger cubic-bezier(0.19, 1, 0.22, 1) both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 28%;
-  }
+main > section,
+.site-section {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
-/* High-Performance Fallback Transitions */
-.section-slide-animate {
-  opacity: 0.2;
-  transform: perspective(1200px) translateY(50px) rotateX(2.5deg) scale(0.985);
-  transition: opacity 0.85s cubic-bezier(0.19, 1, 0.22, 1),
-              transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
-  will-change: opacity, transform;
+/* Section divider lines */
+.section-divider-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(235, 22, 35, 0.35) 20%,
+    rgba(206, 206, 196, 0.2) 50%,
+    rgba(235, 22, 35, 0.35) 80%,
+    transparent 100%
+  );
+  margin: 0 auto;
+  max-width: 90%;
 }
 
-.section-slide-animate.will-animate {
-  opacity: 0.2;
-  transform: perspective(1200px) translateY(50px) rotateX(2.5deg) scale(0.985);
-}
-
-.section-slide-animate.is-in-view {
-  opacity: 1;
-  transform: perspective(1200px) translateY(0) rotateX(0deg) scale(1);
-}
-
-.card-slide-animate {
-  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1),
-              opacity 0.65s cubic-bezier(0.19, 1, 0.22, 1),
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
-  will-change: transform, opacity;
-}
-
-.card-slide-animate.will-animate {
-  opacity: 0.25;
-  transform: translateY(35px);
-}
-
-.card-slide-animate.is-in-view {
-  opacity: 1;
-  transform: translateY(0);
+/* Glow orbs (parallax targets) */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
 }
 
 /* Lifeflow Subtle Floating Badges */
@@ -1078,7 +1067,7 @@ img, svg {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-6px) rotate(0.4deg);
+    transform: translateY(-5px) rotate(0.4deg);
   }
 }
 
@@ -1087,6 +1076,206 @@ img, svg {
   display: inline-flex;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   HONEST INDIVIDUALS — Rich Brand Logo Animations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 1. Continuous Breathing Neon Aura on Logo Emblem */
+@keyframes brandLogoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(235, 22, 35, 0.45)) drop-shadow(0 0 16px rgba(235, 22, 35, 0.2));
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(235, 22, 35, 0.85)) drop-shadow(0 0 28px rgba(235, 22, 35, 0.45));
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* 2. Emblem Halo Wave Pulse */
+@keyframes brandHaloPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.18);
+  }
+}
+
+/* 3. Shimmer Sweep across Typography */
+@keyframes textShimmerSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* 4. Crimson Neon Breathing for INDIVIDUALS */
+@keyframes neonRedPulse {
+  0%, 100% {
+    text-shadow: 0 0 12px rgba(235, 22, 35, 0.5), 0 0 24px rgba(235, 22, 35, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 22px rgba(235, 22, 35, 0.95), 0 0 40px rgba(235, 22, 35, 0.55), 0 0 55px rgba(235, 22, 35, 0.35);
+  }
+}
+
+/* 5. Statutory Radar Pulse & Ping */
+@keyframes radarPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  75%, 100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes radarPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px #10b981;
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px #10b981, 0 0 20px rgba(16, 185, 129, 0.6);
+  }
+}
+
+/* Brand Logo Layout and Interactive Classes */
+.brand-logo-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  padding: 3px 6px;
+  border-radius: 12px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-logo-group:hover {
+  transform: translateY(-1px);
+}
+
+.brand-emblem-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-emblem-halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(235, 22, 35, 0.35) 0%, rgba(235, 22, 35, 0.08) 55%, transparent 75%);
+  animation: brandHaloPulse 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.brand-logo-img {
+  position: relative;
+  z-index: 1;
+  height: clamp(44px, 5.5vw, 56px);
+  width: auto;
+  object-fit: contain;
+  animation: brandLogoGlow 3.2s ease-in-out infinite;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
+}
+
+.brand-logo-group:hover .brand-logo-img {
+  transform: perspective(500px) rotateY(14deg) scale(1.08);
+  filter: drop-shadow(0 0 22px rgba(235, 22, 35, 0.95)) drop-shadow(0 0 35px rgba(235, 22, 35, 0.6));
+}
+
+.brand-wordmark-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(0.88rem, 2.4vw, 1.08rem);
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  line-height: 1.15;
+}
+
+.brand-text-honest {
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #CECEC4 70%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmerSweep 5s linear infinite;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.brand-text-individuals {
+  color: #eb1623;
+  animation: neonRedPulse 2.8s ease-in-out infinite;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.brand-logo-group:hover .brand-text-individuals {
+  transform: scale(1.04);
+}
+
+.brand-subtitle-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-radar-wrapper {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-radar-core {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: radarPulse 2s ease-in-out infinite;
+}
+
+.brand-radar-wave {
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1.5px solid #10b981;
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1094,11 +1283,13 @@ img, svg {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .section-slide-animate,
-  .card-slide-animate,
+  .brand-logo-img,
+  .brand-emblem-halo,
+  .brand-text-honest,
+  .brand-text-individuals,
+  .brand-radar-core,
+  .brand-radar-wave,
   .wf-float-pill {
-    opacity: 1 !important;
-    transform: none !important;
     animation: none !important;
   }
 }
