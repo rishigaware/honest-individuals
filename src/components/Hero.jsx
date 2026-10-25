@@ -84,13 +84,14 @@ export default function Hero({ onNavigate, onOpenContact }) {
             
             {/* Top Compact Trust Badge */}
             <div
+              className="wf-float-pill"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
                 padding: '6px 14px',
                 borderRadius: '9999px',
-                background: 'rgba(235, 22, 35, 0.14)',
+                background: 'linear-gradient(135deg, rgba(235, 22, 35, 0.14) 0%, rgba(176, 135, 116, 0.1) 100%)',
                 border: '1px solid rgba(235, 22, 35, 0.35)',
                 color: '#ff3344',
                 fontSize: '0.78rem',
@@ -325,14 +326,16 @@ export default function Hero({ onNavigate, onOpenContact }) {
           ].map((item, idx) => (
             <div
               key={idx}
+              className="card-slide-animate"
               style={{
-                background: '#11141b',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                background: '#121312',
+                border: '1px solid rgba(206, 206, 196, 0.1)',
                 borderRadius: '10px',
                 padding: '14px',
+                transition: 'all 0.3s ease',
               }}
             >
-              <div style={{ fontSize: '0.72rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.72rem', color: '#B08774', textTransform: 'uppercase', fontWeight: 700 }}>
                 {item.label}
               </div>
               <div style={{ fontSize: '0.98rem', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-mono)', marginTop: '2px' }}>

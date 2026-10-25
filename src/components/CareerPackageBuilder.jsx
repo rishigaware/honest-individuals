@@ -64,7 +64,7 @@ export default function CareerPackageBuilder({ onOpenContact }) {
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(20px, 3.5vw, 36px) auto' }}>
-          <span className="badge badge-rose" style={{ marginBottom: '10px' }}>
+          <span className="badge badge-rose wf-float-pill" style={{ marginBottom: '10px' }}>
             <Sparkles size={12} /> Career Counseling & Growth Hub
           </span>
           <h2 style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.85rem)', fontWeight: 800, marginBottom: '8px', color: '#ffffff' }}>
@@ -77,7 +77,7 @@ export default function CareerPackageBuilder({ onOpenContact }) {
 
         {/* Featured Premium Package Hero Banner with Real Slide 1 Preview */}
         <div
-          className="glass-panel panel-padding"
+          className="glass-panel panel-padding card-slide-animate"
           style={{
             marginBottom: '36px',
             background: 'linear-gradient(135deg, rgba(235, 22, 35, 0.14) 0%, #141822 50%, #0d1017 100%)',

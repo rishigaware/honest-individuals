@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Send, CheckCircle2, X, MessageSquareQuote, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
 
@@ -224,15 +225,15 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
       </section>
 
       {/* Popup Modal (When triggered from consultation buttons) */}
-      {isOpen && (
+      {isOpen && typeof document !== 'undefined' && createPortal(
         <div
           style={{
             position: 'fixed',
             inset: 0,
-            zIndex: 200,
-            background: 'rgba(5, 7, 10, 0.82)',
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)',
+            zIndex: 999999,
+            background: 'rgba(5, 7, 10, 0.88)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -385,7 +386,8 @@ export default function ContactSection({ isOpen, initialService, onClose }) {
               </form>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

@@ -33,7 +33,7 @@ export default function TrustSection({ onOpenContact }) {
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(28px, 5vw, 45px) auto' }}>
-          <span className="badge badge-rose" style={{ marginBottom: '12px' }}>
+          <span className="badge badge-rose wf-float-pill" style={{ marginBottom: '12px' }}>
             <ShieldCheck size={13} /> Trust & Statutory Verification
           </span>
           <h2 style={{ fontSize: 'clamp(1.25rem, 2vw, 1.85rem)', fontWeight: 800, marginBottom: '8px', color: '#ffffff' }}>
@@ -54,7 +54,7 @@ export default function TrustSection({ onOpenContact }) {
           }}
         >
           {/* Card 1: MSME Verification */}
-          <SpotlightCard className="panel-padding" style={{ borderTop: '3px solid #eb1623', background: 'var(--bg-surface)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ borderTop: '3px solid #eb1623', background: 'var(--bg-surface)' }}>
             <div style={{ padding: '10px', borderRadius: '12px', background: 'rgba(235, 22, 35, 0.12)', color: '#eb1623', display: 'inline-block', marginBottom: '16px' }}>
               <Landmark size={24} />
             </div>
@@ -81,7 +81,7 @@ export default function TrustSection({ onOpenContact }) {
           </SpotlightCard>
 
           {/* Card 2: 35% Advance & Contract Protection */}
-          <SpotlightCard className="panel-padding" style={{ borderTop: '3px solid #ff2a38', background: 'var(--bg-surface)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ borderTop: '3px solid #ff2a38', background: 'var(--bg-surface)' }}>
             <div style={{ padding: '10px', borderRadius: '12px', background: 'rgba(235, 22, 35, 0.12)', color: '#ff2a38', display: 'inline-block', marginBottom: '16px' }}>
               <FileCheck size={24} />
             </div>
@@ -105,7 +105,7 @@ export default function TrustSection({ onOpenContact }) {
           </SpotlightCard>
 
           {/* Card 3: PenTest Authorization & NDA */}
-          <SpotlightCard className="panel-padding" style={{ borderTop: '3px solid #eb1623', background: 'var(--bg-surface)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ borderTop: '3px solid #eb1623', background: 'var(--bg-surface)' }}>
             <div style={{ padding: '10px', borderRadius: '12px', background: 'rgba(235, 22, 35, 0.12)', color: '#eb1623', display: 'inline-block', marginBottom: '16px' }}>
               <Lock size={24} />
             </div>
@@ -515,7 +515,10 @@ export default function TrustSection({ onOpenContact }) {
           {/* Thumbnail preview of Organization Deck Slide 6 & 7 */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '12px' }}>
             <div
-              onClick={() => openDocumentLightbox(PORTFOLIO_SLIDES, 5)}
+              onClick={() => {
+                const idx = PORTFOLIO_SLIDES.findIndex((s) => s.src.includes('6.png'));
+                openDocumentLightbox(PORTFOLIO_SLIDES, idx !== -1 ? idx : 0);
+              }}
               style={{
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -531,7 +534,10 @@ export default function TrustSection({ onOpenContact }) {
             </div>
 
             <div
-              onClick={() => openDocumentLightbox(PORTFOLIO_SLIDES, 6)}
+              onClick={() => {
+                const idx = PORTFOLIO_SLIDES.findIndex((s) => s.src.includes('7.png'));
+                openDocumentLightbox(PORTFOLIO_SLIDES, idx !== -1 ? idx : 0);
+              }}
               style={{
                 borderRadius: '8px',
                 overflow: 'hidden',

@@ -151,7 +151,7 @@ export default function ServicesSection({ onOpenContact }) {
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(28px, 5vw, 45px) auto' }}>
-          <span className="badge badge-rose" style={{ marginBottom: '12px' }}>
+          <span className="badge badge-rose wf-float-pill" style={{ marginBottom: '12px' }}>
             Multi-Domain Capabilities
           </span>
           <h2 style={{ fontSize: 'clamp(1.25rem, 2.2vw, 1.85rem)', fontWeight: 800, marginBottom: '8px', color: '#ffffff' }}>
@@ -365,7 +365,7 @@ export default function ServicesSection({ onOpenContact }) {
             webSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding"
+                className="panel-padding card-slide-animate"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -428,7 +428,7 @@ export default function ServicesSection({ onOpenContact }) {
             cyberSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding"
+                className="panel-padding card-slide-animate"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -491,7 +491,7 @@ export default function ServicesSection({ onOpenContact }) {
             careerSolutions.map((srv, idx) => (
               <SpotlightCard
                 key={idx}
-                className="panel-padding"
+                className="panel-padding card-slide-animate"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',

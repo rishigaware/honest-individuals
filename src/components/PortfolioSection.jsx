@@ -133,6 +133,7 @@ export default function PortfolioSection({ onOpenContact }) {
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto clamp(24px, 4vw, 40px) auto' }}>
           <span
+            className="wf-float-pill"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -223,6 +224,7 @@ export default function PortfolioSection({ onOpenContact }) {
             FEATURED SLIDE DECK VIEWER (INTERACTIVE PRESENTATION STAGE)
            ========================================================================= */}
         <div
+          className="card-slide-animate"
           style={{
             background: '#11141b',
             border: '1px solid rgba(235, 22, 35, 0.28)',

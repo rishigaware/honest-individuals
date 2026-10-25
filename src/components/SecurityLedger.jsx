@@ -100,6 +100,7 @@ export default function SecurityLedger({ onOpenContact }) {
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto clamp(28px, 5vw, 45px) auto' }}>
           <span
+            className="wf-float-pill"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -136,7 +137,7 @@ export default function SecurityLedger({ onOpenContact }) {
           }}
         >
           {/* Card 1: Web Exploitation */}
-          <SpotlightCard className="panel-padding" style={{ background: '#11141b', borderTop: '3px solid #eb1623', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ background: '#11141b', borderTop: '3px solid #eb1623', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
               <div style={{ padding: '8px', borderRadius: '10px', background: 'rgba(235, 22, 35, 0.15)', color: '#ff2a38' }}>
                 <Lock size={20} />
@@ -162,7 +163,7 @@ export default function SecurityLedger({ onOpenContact }) {
           </SpotlightCard>
 
           {/* Card 2: API Infiltration */}
-          <SpotlightCard className="panel-padding" style={{ background: '#11141b', borderTop: '3px solid #ff2a38', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ background: '#11141b', borderTop: '3px solid #ff2a38', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
               <div style={{ padding: '8px', borderRadius: '10px', background: 'rgba(235, 22, 35, 0.15)', color: '#eb1623' }}>
                 <ShieldAlert size={20} />
@@ -188,7 +189,7 @@ export default function SecurityLedger({ onOpenContact }) {
           </SpotlightCard>
 
           {/* Card 3: Android Anatomy */}
-          <SpotlightCard className="panel-padding" style={{ background: '#11141b', borderTop: '3px solid #d31825', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <SpotlightCard className="panel-padding card-slide-animate" style={{ background: '#11141b', borderTop: '3px solid #d31825', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
               <div style={{ padding: '8px', borderRadius: '10px', background: 'rgba(211, 24, 37, 0.15)', color: '#ff4d5a' }}>
                 <Smartphone size={20} />

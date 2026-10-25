@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
+import ProcessPipeline from './components/ProcessPipeline';
 import SecurityLedger from './components/SecurityLedger';
 import CareerPackageBuilder from './components/CareerPackageBuilder';
 import TrustSection from './components/TrustSection';
@@ -16,7 +17,7 @@ export default function App() {
 
   // ScrollSpy & Scroll-Reveal IntersectionObserver
   useEffect(() => {
-    const sectionIds = ['home', 'services', 'cybersecurity', 'career-hub', 'trust', 'portfolio', 'contact'];
+    const sectionIds = ['home', 'services', 'process', 'cybersecurity', 'career-hub', 'trust', 'portfolio', 'contact'];
 
     // 1. Ensure top home section is visible immediately
     const homeEl = document.getElementById('home');
@@ -136,6 +137,11 @@ export default function App() {
         {/* Section 02: Digital Engineering & Services */}
         <section id="services" className="section-slide-animate" style={{ paddingTop: 'clamp(20px, 4vw, 40px)' }}>
           <ServicesSection onOpenContact={handleOpenContact} />
+        </section>
+
+        {/* Section 02B: Conscious Lifecycle & Manufacturing Process (Lifeflow Inspired) */}
+        <section id="process" className="section-slide-animate">
+          <ProcessPipeline onOpenContact={handleOpenContact} />
         </section>
 
         {/* Section 03: Offensive Cybersecurity & VAPT */}
